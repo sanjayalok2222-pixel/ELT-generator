@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
 import { Layout } from './components/Layout';
 import { LandingPage } from './pages/LandingPage';
@@ -17,6 +17,13 @@ export const App: React.FC = () => {
   
   // Shared data flow state
   const [selectedHistoryItem, setSelectedHistoryItem] = useState<any>(null);
+
+  // Redirect logged in user from landing to dashboard
+  useEffect(() => {
+    if (user && activePage === 'landing') {
+      setActivePage('dashboard');
+    }
+  }, [user, activePage]);
 
   if (loading) {
     return (
