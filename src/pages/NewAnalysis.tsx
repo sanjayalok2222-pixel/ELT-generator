@@ -90,9 +90,9 @@ export const NewAnalysis: React.FC<NewAnalysisProps> = ({ setActivePage, setSele
 
     setErrorMessage(null);
 
-    // Limit check (2MB)
-    if (file.size > 2 * 1024 * 1024) {
-      setErrorMessage("File is too large! Maximum limit is 2MB.");
+    // Limit check (15MB)
+    if (file.size > 15 * 1024 * 1024) {
+      setErrorMessage("File is too large! Maximum limit is 15MB.");
       return;
     }
 
@@ -129,8 +129,8 @@ export const NewAnalysis: React.FC<NewAnalysisProps> = ({ setActivePage, setSele
     
     setErrorMessage(null);
 
-    if (file.size > 2 * 1024 * 1024) {
-      setErrorMessage("File is too large! Maximum limit is 2MB.");
+    if (file.size > 15 * 1024 * 1024) {
+      setErrorMessage("File is too large! Maximum limit is 15MB.");
       return;
     }
 
@@ -301,7 +301,7 @@ export const NewAnalysis: React.FC<NewAnalysisProps> = ({ setActivePage, setSele
               <Upload size={22} />
             </div>
             <h4 className="font-bold text-sm">Drag & Drop File</h4>
-            <p className="text-xs text-slate-400 mt-1">Supports .sql, .py, or .txt files (max 2MB)</p>
+            <p className="text-xs text-slate-400 mt-1">Supports .sql, .py, or .txt files (max 15MB)</p>
             <button className="mt-4 px-3.5 py-1.5 text-xs font-bold bg-slate-100 dark:bg-navy-800 hover:bg-slate-200 dark:hover:bg-navy-700 rounded-lg transition-colors border border-transparent dark:border-navy-750">
               Browse Files
             </button>
